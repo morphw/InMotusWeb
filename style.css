@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,273;1,273&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+::-webkit-scrollbar {
+	width: 0;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+	padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	background-color: #1f1f25;
+	display: flex;
+	justify-content: center; /* Центрирование контейнера по горизонтали */
+}
+
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin: 18px auto;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: #24242b;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header_left {
+	display: flex;
+	align-items: center;
+}
+
+.logo_link {
+	text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.profile_image {
+	width: 50px;
+	height: 50px;
+	border-radius: 10px;
+	margin-right: 15px;
+}
+
+.header_info {
+	display: flex;
+	flex-direction: column;
+}
+
+.header_title {
+	margin: 0;
+	color: #fff;
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+
+.header_description {
+	margin: 5px 0 0;
+	color: #b3b3b3;
+	font-size: 11px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.header_center {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.header_more_games {
+	margin: 0;
+	color: #fff;
+	font-size: 16px;
+}
+
+.header_username {
+	margin: 5px 0 0;
+	color: #b3b3b3;
+	font-size: 14px;
+}
+
+.header_right {
+	display: flex;
+	align-items: center;
+}
+
+.header_online {
+	display: flex;
+	align-items: center;
+	margin-right: 20px;
+	color: #84ffb9;
+}
+
+.online_icon {
+	margin-right: 5px;
+	font-size: 16px;
+}
+
+.online_count {
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.online_text {
+	font-size: 14px;
+}
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	background: linear-gradient(45deg, #007bff, #7b2ff7);
+	color: #fff;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	border-radius: 30px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	transition: background 0.3s ease;
+}
+
+.button img {
+	width: 16px;
+	height: 16px;
+	margin-left: 8px;
+}
+
+.button:hover {
+	background: linear-gradient(45deg, #0062cc, #5a00c7);
+}
+
+/* карточки товаров */
+
+.popular-products {
+	margin: 20px 0;
+	padding: 20px;
+	background-color: #24242b;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popular-products h2 {
+	color: #fff;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.products-container {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.product-card {
+	background-color: #1f1f25;
+	border-radius: 10px;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	width: calc(25% - 20px); /* 4 карточки в строку */
+	text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.product-card img {
+	max-width: 100%;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+.product-card h3 {
+	color: #fff;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+.product-card p {
+	color: #b3b3b3;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.product-card .price {
+	color: rgb(254, 251, 134);
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.product-card .buy-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background: linear-gradient(45deg, #007bff, #7b2ff7);
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	border-radius: 30px;
+	transition: background 0.3s ease;
+}
+
+.product-card .buy-button:hover {
+	background: linear-gradient(45deg, #0062cc, #5a00c7);
+}
+
+.product-card:hover {
+	transform: translateY(-5px);
+}
+
+/* Оставить отзыв */
+
+/* Отзывы */
+
+.reviews {
+	padding: 40px 20px;
+	background-color: #1f1f25;
+}
+
+.reviews h2 {
+	text-align: center;
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.reviews_container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 20px;
+}
+
+.review {
+	background-color: #24242b;
+	padding: 20px;
+	border-radius: 10px;
+	color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review h3 {
+	margin-bottom: 10px;
+	font-size: 18px;
+	color: rgb(254, 251, 134);
+}
+
+.review_date {
+	font-size: 14px;
+	color: #b3b3b3;
+	margin-bottom: 10px;
+}
+
+.review_rating {
+	color: #ffbf00;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+.review_text {
+	font-size: 16px;
+}
+
+/* футер */
+
+.footer {
+	padding: 40px 20px;
+	color: #fff;
+	margin-top: 40px;
+	border-radius: 10px;
+}
+
+.footer_container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.footer_section {
+	flex: 1 1 300px;
+	margin: 10px;
+}
+
+.footer_title {
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: rgb(254, 251, 134);
+}
+
+.footer_text {
+	font-size: 14px;
+	color: #b3b3b3;
+	line-height: 1.6;
+}
+
+.footer_link {
+	color: rgb(254, 251, 134);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.footer_link:hover {
+	color: #fff;
+}
+
+.footer_social_link {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.footer_social_link img {
+	width: 24px;
+	height: 24px;
+	transition: transform 0.3s ease;
+}
+
+.footer_social_link img:hover {
+	transform: scale(1.1);
+}
+
+.footer_bottom {
+	margin-top: 20px;
+	text-align: center;
+	color: #b3b3b3;
+	font-size: 14px;
+}
